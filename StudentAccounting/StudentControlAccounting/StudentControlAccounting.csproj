@@ -54,6 +54,12 @@
     <Compile Include="UserControlDmitriev.Designer.cs">
       <DependentUpon>UserControlDmitriev.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlMalinin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMalinin.Designer.cs">
+      <DependentUpon>UserControlMalinin.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +68,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlDmitriev.resx">
       <DependentUpon>UserControlDmitriev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMalinin.resx">
+      <DependentUpon>UserControlMalinin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

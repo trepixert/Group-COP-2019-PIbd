@@ -1,6 +1,6 @@
 ﻿namespace StudentControlAccounting
 {
-    partial class UserControlDmitriev
+    partial class UserControlMalinin
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,32 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.listBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // listBox
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 3);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(479, 263);
-            this.dataGridView.TabIndex = 0;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.Location = new System.Drawing.Point(3, 3);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(250, 277);
+            this.listBox.TabIndex = 0;
             // 
-            // UserControlDmitriev
+            // UserControlMalinin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView);
-            this.Name = "UserControlDmitriev";
-            this.Size = new System.Drawing.Size(481, 266);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.Controls.Add(this.listBox);
+            this.Name = "UserControlMalinin";
+            this.Size = new System.Drawing.Size(254, 282);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.ListBox listBox;
     }
 }

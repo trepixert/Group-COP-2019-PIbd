@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace StudentControlAccounting
 {
-    public partial class UserControlDmitriev : UserControl
+    public partial class UserControlMalinin : UserControl
     {
-        public UserControlDmitriev()
+        public UserControlMalinin()
         {
             InitializeComponent();
         }
 
-        public void LoadData(List<object> list)
+        public void LoadResults(List<object> list)
         {
             if (list != null)
             {
-                dataGridView.DataSource = list;
+                listBox.DataSource = list;
             }
         }
     }

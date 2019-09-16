@@ -15,12 +15,25 @@ namespace FormTestProject
         public FormTest()
         {
             InitializeComponent();
-            userControlAgliullin1.LoadEnumeration(typeof(Enumeration));
+            userControlAgliullin.LoadEnumeration(typeof(Enumeration));
         }
 
-        private void buttonTest_Click(object sender, EventArgs e)
+        private void ButtonTest_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You have choosed: " + userControlAgliullin1.GetSelectedNumber);
+            MessageBox.Show(string.IsNullOrEmpty(userControlAgliullin.GetSelectedText)?
+                "Need to choose some of variant"
+                :
+                "You have choosed: " + userControlAgliullin.GetSelectedNumber);
+        }
+
+        private void Button_TestTwo_Click(object sender, EventArgs e)
+        {
+            userControlDmitriev.LoadData(new List<object> { "lul","lulu"});
+        }
+
+        private void Button_TestThree_Click(object sender, EventArgs e)
+        {
+            userControlMalinin.LoadResults(new List<object> { "one", "two" });
         }
     }
 }
