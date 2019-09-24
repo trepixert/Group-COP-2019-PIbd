@@ -12,6 +12,8 @@ namespace FormTestProject
 {
     public partial class FormTest : Form
     {
+
+
         public FormTest()
         {
             InitializeComponent();
@@ -28,12 +30,21 @@ namespace FormTestProject
 
         private void Button_TestTwo_Click(object sender, EventArgs e)
         {
-            userControlDmitriev.LoadData(new List<object> { "lul","lulu"});
+            userControlDmitriev.GetEmail();
         }
 
         private void Button_TestThree_Click(object sender, EventArgs e)
         {
             userControlMalinin.LoadResults(new List<object> { "one", "two" });
+        }
+
+        private void Test_button_backup_Click(object sender, EventArgs e)
+        {
+            List<Student> students = new List<Student>
+            {
+                new Student("lul", "lu", "l")
+            };
+            userNonVisualComponenetAgliullin.SaveData(students);
         }
     }
 }

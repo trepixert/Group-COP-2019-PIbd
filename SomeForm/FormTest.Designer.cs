@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ButtonTest = new System.Windows.Forms.Button();
-            this.userControlAgliullin = new StudentControlAccounting.UserControlAgliullin();
-            this.userControlDmitriev = new StudentControlAccounting.UserControlDmitriev();
             this.button_TestTwo = new System.Windows.Forms.Button();
-            this.userControlMalinin = new StudentControlAccounting.UserControlMalinin();
             this.button_TestThree = new System.Windows.Forms.Button();
+            this.userControlMalinin = new StudentControlAccounting.UserControlMalinin();
+            this.userControlDmitriev = new StudentControlAccounting.UserControlDmitriev();
+            this.userControlAgliullin = new StudentControlAccounting.UserControlAgliullin();
+            this.userNonVisualComponenetAgliullin = new StudentControlAccounting.userNonVisualComponenetAgliullin(this.components);
+            this.test_button_backup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonTest
@@ -46,23 +49,9 @@
             this.ButtonTest.UseVisualStyleBackColor = true;
             this.ButtonTest.Click += new System.EventHandler(this.ButtonTest_Click);
             // 
-            // userControlAgliullin
-            // 
-            this.userControlAgliullin.Location = new System.Drawing.Point(12, 24);
-            this.userControlAgliullin.Name = "userControlAgliullin";
-            this.userControlAgliullin.Size = new System.Drawing.Size(149, 72);
-            this.userControlAgliullin.TabIndex = 0;
-            // 
-            // userControlDmitriev
-            // 
-            this.userControlDmitriev.Location = new System.Drawing.Point(189, 12);
-            this.userControlDmitriev.Name = "userControlDmitriev";
-            this.userControlDmitriev.Size = new System.Drawing.Size(240, 268);
-            this.userControlDmitriev.TabIndex = 3;
-            // 
             // button_TestTwo
             // 
-            this.button_TestTwo.Location = new System.Drawing.Point(276, 301);
+            this.button_TestTwo.Location = new System.Drawing.Point(247, 56);
             this.button_TestTwo.Name = "button_TestTwo";
             this.button_TestTwo.Size = new System.Drawing.Size(75, 23);
             this.button_TestTwo.TabIndex = 4;
@@ -70,16 +59,9 @@
             this.button_TestTwo.UseVisualStyleBackColor = true;
             this.button_TestTwo.Click += new System.EventHandler(this.Button_TestTwo_Click);
             // 
-            // userControlMalinin
-            // 
-            this.userControlMalinin.Location = new System.Drawing.Point(559, 12);
-            this.userControlMalinin.Name = "userControlMalinin";
-            this.userControlMalinin.Size = new System.Drawing.Size(150, 150);
-            this.userControlMalinin.TabIndex = 5;
-            // 
             // button_TestThree
             // 
-            this.button_TestThree.Location = new System.Drawing.Point(591, 169);
+            this.button_TestThree.Location = new System.Drawing.Point(462, 168);
             this.button_TestThree.Name = "button_TestThree";
             this.button_TestThree.Size = new System.Drawing.Size(75, 23);
             this.button_TestThree.TabIndex = 6;
@@ -87,11 +69,45 @@
             this.button_TestThree.UseVisualStyleBackColor = true;
             this.button_TestThree.Click += new System.EventHandler(this.Button_TestThree_Click);
             // 
+            // userControlMalinin
+            // 
+            this.userControlMalinin.Location = new System.Drawing.Point(412, 12);
+            this.userControlMalinin.Name = "userControlMalinin";
+            this.userControlMalinin.Size = new System.Drawing.Size(150, 150);
+            this.userControlMalinin.TabIndex = 5;
+            // 
+            // userControlDmitriev
+            // 
+            this.userControlDmitriev.AcceptColor = System.Drawing.Color.Green;
+            this.userControlDmitriev.DangerColor = System.Drawing.Color.Red;
+            this.userControlDmitriev.Location = new System.Drawing.Point(212, 24);
+            this.userControlDmitriev.Name = "userControlDmitriev";
+            this.userControlDmitriev.Size = new System.Drawing.Size(147, 26);
+            this.userControlDmitriev.TabIndex = 3;
+            // 
+            // userControlAgliullin
+            // 
+            this.userControlAgliullin.Location = new System.Drawing.Point(12, 24);
+            this.userControlAgliullin.Name = "userControlAgliullin";
+            this.userControlAgliullin.Size = new System.Drawing.Size(149, 72);
+            this.userControlAgliullin.TabIndex = 0;
+            // 
+            // test_button_backup
+            // 
+            this.test_button_backup.Location = new System.Drawing.Point(35, 168);
+            this.test_button_backup.Name = "test_button_backup";
+            this.test_button_backup.Size = new System.Drawing.Size(75, 23);
+            this.test_button_backup.TabIndex = 7;
+            this.test_button_backup.Text = "TEST";
+            this.test_button_backup.UseVisualStyleBackColor = true;
+            this.test_button_backup.Click += new System.EventHandler(this.Test_button_backup_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(643, 450);
+            this.Controls.Add(this.test_button_backup);
             this.Controls.Add(this.button_TestThree);
             this.Controls.Add(this.userControlMalinin);
             this.Controls.Add(this.button_TestTwo);
@@ -112,6 +128,8 @@
         private System.Windows.Forms.Button button_TestTwo;
         private StudentControlAccounting.UserControlMalinin userControlMalinin;
         private System.Windows.Forms.Button button_TestThree;
+        private StudentControlAccounting.userNonVisualComponenetAgliullin userNonVisualComponenetAgliullin;
+        private System.Windows.Forms.Button test_button_backup;
     }
 }
 
