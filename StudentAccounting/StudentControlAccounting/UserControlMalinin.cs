@@ -12,17 +12,6 @@ namespace StudentControlAccounting
 {
     public partial class UserControlMalinin : UserControl
     {
-        public UserControlMalinin()
-        {
-            InitializeComponent();
-        }
-
-        public void LoadResults(List<object> list)
-        {
-            if (list != null)
-            {
-                listBox.DataSource = list;
-            }
-        }
+        
     }
 }

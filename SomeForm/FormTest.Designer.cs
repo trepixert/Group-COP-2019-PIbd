@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.buttonChecked = new System.Windows.Forms.Button();
-            this.buttonCombo = new System.Windows.Forms.Button();
-            this.userControlAgliullin = new StudentControlAccounting.UserControlAgliullin();
             this.userControlDmitriev = new StudentControlAccounting.UserControlDmitriev();
+            this.userControlMalinin1 = new StudentControlAccounting.UserControlMalinin();
             this.SuspendLayout();
             // 
             // buttonChecked
@@ -44,25 +43,6 @@
             this.buttonChecked.UseVisualStyleBackColor = true;
             this.buttonChecked.Click += new System.EventHandler(this.buttonChange_Click);
             // 
-            // buttonCombo
-            // 
-            this.buttonCombo.Location = new System.Drawing.Point(186, 64);
-            this.buttonCombo.Name = "buttonCombo";
-            this.buttonCombo.Size = new System.Drawing.Size(113, 23);
-            this.buttonCombo.TabIndex = 3;
-            this.buttonCombo.Text = "Сменить номер";
-            this.buttonCombo.UseVisualStyleBackColor = true;
-            this.buttonCombo.Click += new System.EventHandler(this.buttonCombo_Click);
-            // 
-            // userControlAgliullin
-            // 
-            this.userControlAgliullin.Location = new System.Drawing.Point(186, 12);
-            this.userControlAgliullin.Name = "userControlAgliullin";
-            this.userControlAgliullin.SelectedIndex = 0;
-            this.userControlAgliullin.Size = new System.Drawing.Size(149, 29);
-            this.userControlAgliullin.TabIndex = 2;
-            this.userControlAgliullin.ComboBoxSelectedElementChange += new System.EventHandler(this.userControlAgliullin_ComboBoxSelectedElementChange);
-            // 
             // userControlDmitriev
             // 
             this.userControlDmitriev.CheckedIndex = null;
@@ -72,13 +52,19 @@
             this.userControlDmitriev.TabIndex = 0;
             this.userControlDmitriev.CheckedListBoxSelectedElementChange += new System.EventHandler(this.userControlDmitriev_CheckedListBoxSelectedElementsChange);
             // 
+            // userControlMalinin1
+            // 
+            this.userControlMalinin1.Location = new System.Drawing.Point(243, 12);
+            this.userControlMalinin1.Name = "userControlMalinin1";
+            this.userControlMalinin1.Size = new System.Drawing.Size(150, 150);
+            this.userControlMalinin1.TabIndex = 2;
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 237);
-            this.Controls.Add(this.buttonCombo);
-            this.Controls.Add(this.userControlAgliullin);
+            this.Controls.Add(this.userControlMalinin1);
             this.Controls.Add(this.buttonChecked);
             this.Controls.Add(this.userControlDmitriev);
             this.Name = "FormTest";
@@ -91,8 +77,7 @@
 
         private StudentControlAccounting.UserControlDmitriev userControlDmitriev;
         private System.Windows.Forms.Button buttonChecked;
-        private StudentControlAccounting.UserControlAgliullin userControlAgliullin;
-        private System.Windows.Forms.Button buttonCombo;
+        private StudentControlAccounting.UserControlMalinin userControlMalinin1;
     }
 }
 

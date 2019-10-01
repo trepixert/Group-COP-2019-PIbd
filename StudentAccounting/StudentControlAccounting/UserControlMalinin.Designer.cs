@@ -28,30 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox = new System.Windows.Forms.ListBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // listBox
+            // dateTimePicker1
             // 
-            this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(3, 3);
-            this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(250, 277);
-            this.listBox.TabIndex = 0;
+            this.dateTimePicker1.Location = new System.Drawing.Point(3, 62);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePicker1.TabIndex = 0;
             // 
             // UserControlMalinin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listBox);
+            this.Controls.Add(this.dateTimePicker1);
             this.Name = "UserControlMalinin";
-            this.Size = new System.Drawing.Size(254, 282);
+            this.Size = new System.Drawing.Size(465, 142);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
