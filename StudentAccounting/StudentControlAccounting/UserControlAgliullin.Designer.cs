@@ -28,30 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxCourse = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // comboBoxCourse
-            // 
-            this.comboBoxCourse.FormattingEnabled = true;
-            this.comboBoxCourse.Location = new System.Drawing.Point(3, 3);
-            this.comboBoxCourse.Name = "comboBoxCourse";
-            this.comboBoxCourse.Size = new System.Drawing.Size(143, 21);
-            this.comboBoxCourse.TabIndex = 0;
             // 
             // UserControlAgliullin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBoxCourse);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlAgliullin";
-            this.Size = new System.Drawing.Size(149, 29);
+            this.Size = new System.Drawing.Size(199, 36);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxCourse;
     }
 }

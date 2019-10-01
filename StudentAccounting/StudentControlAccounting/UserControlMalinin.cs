@@ -12,29 +12,46 @@ namespace StudentControlAccounting
 {
     public partial class UserControlMalinin : UserControl
     {
+        private int _selectedIndex;
 
-        public string FieldType {
-            get;set;
-        }
+        private event EventHandler _listBoxSelectedElementChange;
+
         public UserControlMalinin()
         {
             InitializeComponent();
+            listBox.SelectedIndexChanged += (sender, e) => {_listBoxSelectedElementChange?.Invoke(sender, e);};
         }
 
-        public void LoadResults(List<object> list)
+        [Category("Спецификация"), Description("Порядковый номер выбранного элемента")]
+        public int SelectedIndex
         {
-            List<string> strlist = new List<string>();
-            foreach(var obj in list)
+            get { return _selectedIndex; }
+            set
             {
-                string outstr = "";
-                var filtredProp = obj.GetType().GetProperties().Where((x) => FieldType.Split(' ').Contains(x.Name));
-                foreach(var x in filtredProp)
+                if (value > -2 && value < listBox.Items.Count)
                 {
-                    outstr += " " + x.GetValue(obj).ToString();
+                    _selectedIndex = value;
+                    listBox.SelectedIndex = _selectedIndex;
                 }
-                strlist.Add(outstr);
             }
-            listBox.Items.AddRange(strlist.ToArray());
+        }
+
+        [Category("Спецификация"), Description("Текст выбранной записи")]
+        public string SelectedText
+        {
+            get { return listBox.Text; }
+        }
+
+        [Category("Спецификация"), Description("Событие выбора элемента из списка")]
+        public event EventHandler ListBoxSelectedElementChange
+        {
+            add { _listBoxSelectedElementChange += value; }
+            remove { _listBoxSelectedElementChange -= value; }
+        }
+
+        public void LoadEnumeration(List<string> elements)
+        {
+            elements.ForEach(element => listBox.Items.Add(element));
         }
     }
 }

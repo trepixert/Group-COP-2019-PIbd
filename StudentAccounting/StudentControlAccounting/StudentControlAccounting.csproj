@@ -61,12 +61,6 @@
     <Compile Include="UserControlMalinin.Designer.cs">
       <DependentUpon>UserControlMalinin.cs</DependentUpon>
     </Compile>
-    <Compile Include="userNonVisualComponenetAgliullin.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="userNonVisualComponenetAgliullin.Designer.cs">
-      <DependentUpon>userNonVisualComponenetAgliullin.cs</DependentUpon>
-    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>

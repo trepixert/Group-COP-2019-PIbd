@@ -28,33 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(3, 3);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(149, 20);
-            this.textBoxEmail.TabIndex = 0;
             // 
             // UserControlDmitriev
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBoxEmail);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlDmitriev";
-            this.Size = new System.Drawing.Size(157, 28);
+            this.Size = new System.Drawing.Size(209, 34);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.ToolTip toolTip;
     }
 }
