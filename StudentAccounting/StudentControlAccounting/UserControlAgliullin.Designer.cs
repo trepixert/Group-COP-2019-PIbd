@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox
+            // dataGridView
             // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(3, 3);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(143, 21);
-            this.comboBox.TabIndex = 0;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(329, 191);
+            this.dataGridView.TabIndex = 0;
             // 
             // UserControlAgliullin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox);
+            this.Controls.Add(this.dataGridView);
             this.Name = "UserControlAgliullin";
-            this.Size = new System.Drawing.Size(149, 29);
+            this.Size = new System.Drawing.Size(329, 191);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }

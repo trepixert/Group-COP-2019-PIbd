@@ -12,6 +12,9 @@ namespace StudentControlAccounting
 {
     public partial class UserControlAgliullin : UserControl
     {
-        
+        public UserControlAgliullin()
+        {
+            InitializeComponent();
+        }
     }
 }

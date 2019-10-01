@@ -21,5 +21,10 @@ namespace FormTestProject
         {
             userControlDmitriev.CheckedIndex = new List<int> { 3 };
         }
+
+        private void FormTest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

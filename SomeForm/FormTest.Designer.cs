@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.buttonChecked = new System.Windows.Forms.Button();
-            this.userControlDmitriev = new StudentControlAccounting.UserControlDmitriev();
+            this.button1 = new System.Windows.Forms.Button();
             this.userControlMalinin1 = new StudentControlAccounting.UserControlMalinin();
+            this.userControlDmitriev = new StudentControlAccounting.UserControlDmitriev();
             this.SuspendLayout();
             // 
             // buttonChecked
@@ -43,6 +44,24 @@
             this.buttonChecked.UseVisualStyleBackColor = true;
             this.buttonChecked.Click += new System.EventHandler(this.buttonChange_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(197, 161);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 26);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Подтвердить";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // userControlMalinin1
+            // 
+            this.userControlMalinin1.AcceptColor = System.Drawing.Color.Green;
+            this.userControlMalinin1.DangerColor = System.Drawing.Color.Red;
+            this.userControlMalinin1.Location = new System.Drawing.Point(177, 12);
+            this.userControlMalinin1.Name = "userControlMalinin1";
+            this.userControlMalinin1.Size = new System.Drawing.Size(229, 143);
+            this.userControlMalinin1.TabIndex = 2;
+            // 
             // userControlDmitriev
             // 
             this.userControlDmitriev.CheckedIndex = null;
@@ -52,23 +71,18 @@
             this.userControlDmitriev.TabIndex = 0;
             this.userControlDmitriev.CheckedListBoxSelectedElementChange += new System.EventHandler(this.userControlDmitriev_CheckedListBoxSelectedElementsChange);
             // 
-            // userControlMalinin1
-            // 
-            this.userControlMalinin1.Location = new System.Drawing.Point(243, 12);
-            this.userControlMalinin1.Name = "userControlMalinin1";
-            this.userControlMalinin1.Size = new System.Drawing.Size(150, 150);
-            this.userControlMalinin1.TabIndex = 2;
-            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 237);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.userControlMalinin1);
             this.Controls.Add(this.buttonChecked);
             this.Controls.Add(this.userControlDmitriev);
             this.Name = "FormTest";
             this.Text = "FormTest";
+            this.Load += new System.EventHandler(this.FormTest_Load);
             this.ResumeLayout(false);
 
         }
@@ -78,6 +92,7 @@
         private StudentControlAccounting.UserControlDmitriev userControlDmitriev;
         private System.Windows.Forms.Button buttonChecked;
         private StudentControlAccounting.UserControlMalinin userControlMalinin1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
