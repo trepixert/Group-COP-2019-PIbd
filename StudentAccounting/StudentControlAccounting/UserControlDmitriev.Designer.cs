@@ -28,32 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // checkedListBox
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 3);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(479, 263);
-            this.dataGridView.TabIndex = 0;
+            this.checkedListBox.FormattingEnabled = true;
+            this.checkedListBox.Location = new System.Drawing.Point(0, 3);
+            this.checkedListBox.Name = "checkedListBox";
+            this.checkedListBox.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox.TabIndex = 0;
             // 
             // UserControlDmitriev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.checkedListBox);
             this.Name = "UserControlDmitriev";
-            this.Size = new System.Drawing.Size(481, 266);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.Size = new System.Drawing.Size(289, 155);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.CheckedListBox checkedListBox;
     }
 }

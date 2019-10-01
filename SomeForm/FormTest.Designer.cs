@@ -28,90 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ButtonTest = new System.Windows.Forms.Button();
+            this.buttonChecked = new System.Windows.Forms.Button();
+            this.buttonCombo = new System.Windows.Forms.Button();
             this.userControlAgliullin = new StudentControlAccounting.UserControlAgliullin();
             this.userControlDmitriev = new StudentControlAccounting.UserControlDmitriev();
-            this.button_TestTwo = new System.Windows.Forms.Button();
-            this.userControlMalinin = new StudentControlAccounting.UserControlMalinin();
-            this.button_TestThree = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // ButtonTest
+            // buttonChecked
             // 
-            this.ButtonTest.Location = new System.Drawing.Point(35, 63);
-            this.ButtonTest.Name = "ButtonTest";
-            this.ButtonTest.Size = new System.Drawing.Size(75, 23);
-            this.ButtonTest.TabIndex = 2;
-            this.ButtonTest.Text = "Click";
-            this.ButtonTest.UseVisualStyleBackColor = true;
-            this.ButtonTest.Click += new System.EventHandler(this.ButtonTest_Click);
+            this.buttonChecked.Location = new System.Drawing.Point(12, 151);
+            this.buttonChecked.Name = "buttonChecked";
+            this.buttonChecked.Size = new System.Drawing.Size(118, 26);
+            this.buttonChecked.TabIndex = 1;
+            this.buttonChecked.Text = "Сменить номер";
+            this.buttonChecked.UseVisualStyleBackColor = true;
+            this.buttonChecked.Click += new System.EventHandler(this.buttonChange_Click);
+            // 
+            // buttonCombo
+            // 
+            this.buttonCombo.Location = new System.Drawing.Point(186, 64);
+            this.buttonCombo.Name = "buttonCombo";
+            this.buttonCombo.Size = new System.Drawing.Size(113, 23);
+            this.buttonCombo.TabIndex = 3;
+            this.buttonCombo.Text = "Сменить номер";
+            this.buttonCombo.UseVisualStyleBackColor = true;
+            this.buttonCombo.Click += new System.EventHandler(this.buttonCombo_Click);
             // 
             // userControlAgliullin
             // 
-            this.userControlAgliullin.Location = new System.Drawing.Point(12, 24);
+            this.userControlAgliullin.Location = new System.Drawing.Point(186, 12);
             this.userControlAgliullin.Name = "userControlAgliullin";
-            this.userControlAgliullin.Size = new System.Drawing.Size(149, 72);
-            this.userControlAgliullin.TabIndex = 0;
+            this.userControlAgliullin.SelectedIndex = 0;
+            this.userControlAgliullin.Size = new System.Drawing.Size(149, 29);
+            this.userControlAgliullin.TabIndex = 2;
+            this.userControlAgliullin.ComboBoxSelectedElementChange += new System.EventHandler(this.userControlAgliullin_ComboBoxSelectedElementChange);
             // 
             // userControlDmitriev
             // 
-            this.userControlDmitriev.Location = new System.Drawing.Point(189, 12);
+            this.userControlDmitriev.CheckedIndex = null;
+            this.userControlDmitriev.Location = new System.Drawing.Point(12, 12);
             this.userControlDmitriev.Name = "userControlDmitriev";
-            this.userControlDmitriev.Size = new System.Drawing.Size(240, 268);
-            this.userControlDmitriev.TabIndex = 3;
-            // 
-            // button_TestTwo
-            // 
-            this.button_TestTwo.Location = new System.Drawing.Point(276, 301);
-            this.button_TestTwo.Name = "button_TestTwo";
-            this.button_TestTwo.Size = new System.Drawing.Size(75, 23);
-            this.button_TestTwo.TabIndex = 4;
-            this.button_TestTwo.Text = "ClickTwo";
-            this.button_TestTwo.UseVisualStyleBackColor = true;
-            this.button_TestTwo.Click += new System.EventHandler(this.Button_TestTwo_Click);
-            // 
-            // userControlMalinin
-            // 
-            this.userControlMalinin.Location = new System.Drawing.Point(559, 12);
-            this.userControlMalinin.Name = "userControlMalinin";
-            this.userControlMalinin.Size = new System.Drawing.Size(150, 150);
-            this.userControlMalinin.TabIndex = 5;
-            // 
-            // button_TestThree
-            // 
-            this.button_TestThree.Location = new System.Drawing.Point(591, 169);
-            this.button_TestThree.Name = "button_TestThree";
-            this.button_TestThree.Size = new System.Drawing.Size(75, 23);
-            this.button_TestThree.TabIndex = 6;
-            this.button_TestThree.Text = "Click Three";
-            this.button_TestThree.UseVisualStyleBackColor = true;
-            this.button_TestThree.Click += new System.EventHandler(this.Button_TestThree_Click);
+            this.userControlDmitriev.Size = new System.Drawing.Size(123, 99);
+            this.userControlDmitriev.TabIndex = 0;
+            this.userControlDmitriev.CheckedListBoxSelectedElementChange += new System.EventHandler(this.userControlDmitriev_CheckedListBoxSelectedElementsChange);
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button_TestThree);
-            this.Controls.Add(this.userControlMalinin);
-            this.Controls.Add(this.button_TestTwo);
-            this.Controls.Add(this.userControlDmitriev);
-            this.Controls.Add(this.ButtonTest);
+            this.ClientSize = new System.Drawing.Size(575, 237);
+            this.Controls.Add(this.buttonCombo);
             this.Controls.Add(this.userControlAgliullin);
+            this.Controls.Add(this.buttonChecked);
+            this.Controls.Add(this.userControlDmitriev);
             this.Name = "FormTest";
-            this.Text = "Form1";
+            this.Text = "FormTest";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private StudentControlAccounting.UserControlAgliullin userControlAgliullin;
-        private System.Windows.Forms.Button ButtonTest;
         private StudentControlAccounting.UserControlDmitriev userControlDmitriev;
-        private System.Windows.Forms.Button button_TestTwo;
-        private StudentControlAccounting.UserControlMalinin userControlMalinin;
-        private System.Windows.Forms.Button button_TestThree;
+        private System.Windows.Forms.Button buttonChecked;
+        private StudentControlAccounting.UserControlAgliullin userControlAgliullin;
+        private System.Windows.Forms.Button buttonCombo;
     }
 }
 

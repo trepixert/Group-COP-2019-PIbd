@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxCourse = new System.Windows.Forms.ComboBox();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // comboBoxCourse
+            // comboBox
             // 
-            this.comboBoxCourse.FormattingEnabled = true;
-            this.comboBoxCourse.Location = new System.Drawing.Point(3, 3);
-            this.comboBoxCourse.Name = "comboBoxCourse";
-            this.comboBoxCourse.Size = new System.Drawing.Size(143, 21);
-            this.comboBoxCourse.TabIndex = 0;
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Location = new System.Drawing.Point(3, 3);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(143, 21);
+            this.comboBox.TabIndex = 0;
             // 
             // UserControlAgliullin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBoxCourse);
+            this.Controls.Add(this.comboBox);
             this.Name = "UserControlAgliullin";
             this.Size = new System.Drawing.Size(149, 29);
             this.ResumeLayout(false);
@@ -52,6 +52,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBoxCourse;
+        private System.Windows.Forms.ComboBox comboBox;
     }
 }
