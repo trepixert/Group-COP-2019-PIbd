@@ -46,5 +46,24 @@ namespace FormTestProject
             };
             userNonVisualComponenetAgliullin.SaveData(students);
         }
+
+        private void ReportToExcel_Button_Click(object sender, EventArgs e)
+        {
+            List<Student> students = new List<Student>() {
+                new Student("Ramis","Agliullin","pixert@mail.ru"),
+                new Student("la","lala","lalala")
+            };
+            userNonVisualComponentDmitriev1.CreateExcelReport(students,"C:\\Users\\Ramis\\Documents",false);
+        }
+
+        private void PdfReport_Button_Click(object sender, EventArgs e)
+        {
+            List<Student> students = new List<Student>() {
+                new Student("Ramis","Agliullin","pixert@mail.ru", new DateTime(2014,5,1)),
+                new Student("la","lala","lalala",new DateTime(2014,5,1)),
+                new Student("la","lala","lalala",new DateTime(2017,8,9))
+            };
+            userNonVisualComponentMalinin1.CreateDiagram(students, @"C:\\Temp\\diagram.pdf");
+        }
     }
 }

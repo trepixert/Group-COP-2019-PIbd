@@ -32,11 +32,16 @@
             this.ButtonTest = new System.Windows.Forms.Button();
             this.button_TestTwo = new System.Windows.Forms.Button();
             this.button_TestThree = new System.Windows.Forms.Button();
+            this.test_button_backup = new System.Windows.Forms.Button();
+            this.ReportToExcel_Button = new System.Windows.Forms.Button();
+            this.PdfReport_Button = new System.Windows.Forms.Button();
             this.userControlMalinin = new StudentControlAccounting.UserControlMalinin();
             this.userControlDmitriev = new StudentControlAccounting.UserControlDmitriev();
             this.userControlAgliullin = new StudentControlAccounting.UserControlAgliullin();
             this.userNonVisualComponenetAgliullin = new StudentControlAccounting.userNonVisualComponenetAgliullin(this.components);
-            this.test_button_backup = new System.Windows.Forms.Button();
+            this.userNonVisualComponentDmitriev1 = new StudentControlAccounting.userNonVisualComponentDmitriev(this.components);
+            this.userNonVisualComponenetAgliullin1 = new StudentControlAccounting.userNonVisualComponenetAgliullin(this.components);
+            this.userNonVisualComponentMalinin1 = new StudentControlAccounting.userNonVisualComponentMalinin(this.components);
             this.SuspendLayout();
             // 
             // ButtonTest
@@ -69,8 +74,39 @@
             this.button_TestThree.UseVisualStyleBackColor = true;
             this.button_TestThree.Click += new System.EventHandler(this.Button_TestThree_Click);
             // 
+            // test_button_backup
+            // 
+            this.test_button_backup.Location = new System.Drawing.Point(35, 168);
+            this.test_button_backup.Name = "test_button_backup";
+            this.test_button_backup.Size = new System.Drawing.Size(75, 23);
+            this.test_button_backup.TabIndex = 7;
+            this.test_button_backup.Text = "TEST";
+            this.test_button_backup.UseVisualStyleBackColor = true;
+            this.test_button_backup.Click += new System.EventHandler(this.Test_button_backup_Click);
+            // 
+            // ReportToExcel_Button
+            // 
+            this.ReportToExcel_Button.Location = new System.Drawing.Point(116, 168);
+            this.ReportToExcel_Button.Name = "ReportToExcel_Button";
+            this.ReportToExcel_Button.Size = new System.Drawing.Size(75, 23);
+            this.ReportToExcel_Button.TabIndex = 8;
+            this.ReportToExcel_Button.Text = "TEST №2";
+            this.ReportToExcel_Button.UseVisualStyleBackColor = true;
+            this.ReportToExcel_Button.Click += new System.EventHandler(this.ReportToExcel_Button_Click);
+            // 
+            // PdfReport_Button
+            // 
+            this.PdfReport_Button.Location = new System.Drawing.Point(197, 168);
+            this.PdfReport_Button.Name = "PdfReport_Button";
+            this.PdfReport_Button.Size = new System.Drawing.Size(75, 23);
+            this.PdfReport_Button.TabIndex = 9;
+            this.PdfReport_Button.Text = "TEST №3";
+            this.PdfReport_Button.UseVisualStyleBackColor = true;
+            this.PdfReport_Button.Click += new System.EventHandler(this.PdfReport_Button_Click);
+            // 
             // userControlMalinin
             // 
+            this.userControlMalinin.FieldType = null;
             this.userControlMalinin.Location = new System.Drawing.Point(412, 12);
             this.userControlMalinin.Name = "userControlMalinin";
             this.userControlMalinin.Size = new System.Drawing.Size(150, 150);
@@ -92,21 +128,17 @@
             this.userControlAgliullin.Size = new System.Drawing.Size(149, 72);
             this.userControlAgliullin.TabIndex = 0;
             // 
-            // test_button_backup
+            // userNonVisualComponentMalinin1
             // 
-            this.test_button_backup.Location = new System.Drawing.Point(35, 168);
-            this.test_button_backup.Name = "test_button_backup";
-            this.test_button_backup.Size = new System.Drawing.Size(75, 23);
-            this.test_button_backup.TabIndex = 7;
-            this.test_button_backup.Text = "TEST";
-            this.test_button_backup.UseVisualStyleBackColor = true;
-            this.test_button_backup.Click += new System.EventHandler(this.Test_button_backup_Click);
+            this.userNonVisualComponentMalinin1.FieldType = "Name Surname Date";
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 450);
+            this.Controls.Add(this.PdfReport_Button);
+            this.Controls.Add(this.ReportToExcel_Button);
             this.Controls.Add(this.test_button_backup);
             this.Controls.Add(this.button_TestThree);
             this.Controls.Add(this.userControlMalinin);
@@ -130,6 +162,11 @@
         private System.Windows.Forms.Button button_TestThree;
         private StudentControlAccounting.userNonVisualComponenetAgliullin userNonVisualComponenetAgliullin;
         private System.Windows.Forms.Button test_button_backup;
+        private System.Windows.Forms.Button ReportToExcel_Button;
+        private StudentControlAccounting.userNonVisualComponentDmitriev userNonVisualComponentDmitriev1;
+        private StudentControlAccounting.userNonVisualComponenetAgliullin userNonVisualComponenetAgliullin1;
+        private System.Windows.Forms.Button PdfReport_Button;
+        private StudentControlAccounting.userNonVisualComponentMalinin userNonVisualComponentMalinin1;
     }
 }
 
