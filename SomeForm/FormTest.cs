@@ -8,12 +8,12 @@ namespace FormTestProject
     {
         public FormTest()
         {
-            InitializeComponent();
+            InitializeComponent();      
             userControlDmitriev.LoadList(new List<string> { "Первый", "Второй", "Третий", "Четвертый" });
-            userControlAgliullin1.AddNode("Элемент1", "/");
-            userControlAgliullin1.AddNode("Тест", "/Элемент1/");
-            userControlAgliullin1.AddNode("Подтест", "/Элемент1/Тест/");
-            userControlAgliullin1.AddNode("Элемент2", "/");
+            userControlAgliullin1.AddNode("Первый курс", "/");
+            userControlAgliullin1.AddNode("Бюджет", "/Первый курс/");
+            userControlAgliullin1.AddNode("Группа", "/Первый курс/Бюджет/");
+            userControlAgliullin1.AddNode("Второй курс", "/");
         }
 
         private void userControlDmitriev_CheckedListBoxSelectedElementsChange(object sender, EventArgs e)
