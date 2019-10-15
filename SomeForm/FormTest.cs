@@ -10,6 +10,10 @@ namespace FormTestProject
         {
             InitializeComponent();
             userControlDmitriev.LoadList(new List<string> { "Первый", "Второй", "Третий", "Четвертый" });
+            userControlAgliullin1.AddNode("Элемент1", "/");
+            userControlAgliullin1.AddNode("Тест", "/Элемент1/");
+            userControlAgliullin1.AddNode("Подтест", "/Элемент1/Тест/");
+            userControlAgliullin1.AddNode("Элемент2", "/");
         }
 
         private void userControlDmitriev_CheckedListBoxSelectedElementsChange(object sender, EventArgs e)
