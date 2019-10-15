@@ -12,8 +12,6 @@ namespace StudentControlAccounting
 {
     public partial class UserControlMalinin : UserControl
     {
-        public Color DangerColor { get; set; }
-        public Color AcceptColor { get; set; }
 
         /// <summary>
         /// Конструктор
@@ -21,26 +19,26 @@ namespace StudentControlAccounting
         public UserControlMalinin()
         {
             InitializeComponent();
-            DangerColor = Color.Red;
-            AcceptColor = Color.Green;
         }
 
-        /// <summary>
-        /// Начальная дата
-        /// </summary>
-        /// <returns>Возвращает начальную дату</returns>
-        public DateTime StartDate()
+        [Category("Спецификация"), Description("Выбранная дата")]
+        public string SelectedText
         {
-            return dateTimePickerStart.Value;
+            get { return dateTimePicker.Value.ToShortDateString(); }
         }
 
-        /// <summary>
-        /// Конечная дата
-        /// </summary>
-        /// <returns>возвращает конечную дату</returns>
-        public DateTime EndDate()
+        [Category("Спецификация"), Description("Дата начала")]
+        public string MaxDate
         {
-            return dateTimePickerEnd.Value;
+            set { dateTimePicker.MaxDate = DateTime.Parse(value); }
+            get { return dateTimePicker.MaxDate.ToShortDateString(); }
+        }
+
+        [Category("Спецификация"), Description("Дата конца")]
+        public string MinValue
+        {
+            set { dateTimePicker.MinDate = DateTime.Parse(value); }
+            get { return dateTimePicker.MinDate.ToShortDateString(); }
         }
     }
 }
