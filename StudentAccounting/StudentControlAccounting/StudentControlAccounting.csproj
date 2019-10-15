@@ -60,6 +60,12 @@
     <Compile Include="UserControlMalinin.Designer.cs">
       <DependentUpon>UserControlMalinin.cs</DependentUpon>
     </Compile>
+    <Compile Include="userNonVisualControlDmitriev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="userNonVisualControlDmitriev.Designer.cs">
+      <DependentUpon>userNonVisualControlDmitriev.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
