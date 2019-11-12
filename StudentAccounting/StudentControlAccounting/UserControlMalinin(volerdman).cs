@@ -28,17 +28,17 @@ namespace StudentControlAccounting
         }
 
         [Category("Спецификация"), Description("Дата начала")]
-        public string MaxDate
+        public DateTime MaxDate
         {
-            set { dateTimePicker.MaxDate = DateTime.Parse(value); }
-            get { return dateTimePicker.MaxDate.ToShortDateString(); }
+            set { dateTimePicker.MaxDate = DateTime.MaxValue; }
+            get { return dateTimePicker.MaxDate; }
         }
 
         [Category("Спецификация"), Description("Дата конца")]
-        public string MinValue
+        public DateTime MinValue
         {
-            set { dateTimePicker.MinDate = DateTime.Parse(value); }
-            get { return dateTimePicker.MinDate.ToShortDateString(); }
+            set { dateTimePicker.MinDate = DateTime.MinValue; }
+            get { return dateTimePicker.MinDate; }
         }
     }
 }

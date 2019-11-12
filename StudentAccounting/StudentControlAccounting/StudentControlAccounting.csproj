@@ -29,8 +29,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.0.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.0.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,45 +54,78 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Document.NET, Version=1.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.4.1\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=1.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.4.1\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControlAgliullin.cs">
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Test%28volerdman%29.cs" />
+    <Compile Include="UserControlAgliullin%28volerdman%29.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlAgliullin.Designer.cs">
-      <DependentUpon>UserControlAgliullin.cs</DependentUpon>
+    <Compile Include="UserControlAgliullin%28volerdman%29.Designer.cs">
+      <DependentUpon>UserControlAgliullin%28volerdman%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlDmitriev.cs">
+    <Compile Include="UserControlDmitriev%28volerdman%29.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlDmitriev.Designer.cs">
-      <DependentUpon>UserControlDmitriev.cs</DependentUpon>
+    <Compile Include="UserControlDmitriev%28volerdman%29.Designer.cs">
+      <DependentUpon>UserControlDmitriev%28volerdman%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlMalinin.cs">
+    <Compile Include="UserControlMalinin%28volerdman%29.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlMalinin.Designer.cs">
-      <DependentUpon>UserControlMalinin.cs</DependentUpon>
+    <Compile Include="UserControlMalinin%28volerdman%29.Designer.cs">
+      <DependentUpon>UserControlMalinin%28volerdman%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="userNonVisualControlDmitriev.cs">
+    <Compile Include="userNonVisualComponentAgliullin%28volerdman%29.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="userNonVisualControlDmitriev.Designer.cs">
-      <DependentUpon>userNonVisualControlDmitriev.cs</DependentUpon>
+    <Compile Include="userNonVisualComponentAgliullin%28volerdman%29.Designer.cs">
+      <DependentUpon>userNonVisualComponentAgliullin%28volerdman%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userNonVisualControlMalinin%28volerdman%29.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="userNonVisualControlMalinin%28volerdman%29.Designer.cs">
+      <DependentUpon>userNonVisualControlMalinin%28volerdman%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userNonVisualControlDmitriev%28volerdman%29.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="userNonVisualControlDmitriev%28volerdman%29.Designer.cs">
+      <DependentUpon>userNonVisualControlDmitriev%28volerdman%29.cs</DependentUpon>
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserControlAgliullin.resx">
-      <DependentUpon>UserControlAgliullin.cs</DependentUpon>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlDmitriev.resx">
-      <DependentUpon>UserControlDmitriev.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlAgliullin%28volerdman%29.resx">
+      <DependentUpon>UserControlAgliullin%28volerdman%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlMalinin.resx">
-      <DependentUpon>UserControlMalinin.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlDmitriev%28volerdman%29.resx">
+      <DependentUpon>UserControlDmitriev%28volerdman%29.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMalinin%28volerdman%29.resx">
+      <DependentUpon>UserControlMalinin%28volerdman%29.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\TIMCYR.TTF" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
