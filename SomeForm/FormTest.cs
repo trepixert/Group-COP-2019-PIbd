@@ -42,5 +42,33 @@ namespace FormTestProject
             var list = new List<Test> { new Test { FIO = "Дмитриев Валерий", Profile = "ПИ", Date = "10.07.2019" }, new Test { FIO = "Андреев Леонид", Profile = "ПИ", Date = "15.06.2019" } };
             userControlDmitriev.AddData(list, "FIO,Profile,Date");
         }
+        
+        private void ButtonVvod_Click(object sender, EventArgs e)
+        {
+            int? sum = userControlAgliullin.TextBoxValue;
+
+            if (userControlAgliullin.IsChecked)
+            {
+                MessageBox.Show("Выбрано значение null");
+            }
+            else
+            {
+                if (sum.HasValue)
+                {
+                    if (sum != -1)
+                    {
+                        MessageBox.Show("Введено значение: " + sum.Value);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Некорректное значение");
+                    }
+                }
+                else
+                {
+                    userControlAgliullin.IsChecked = true;
+                }
+            }
+        }        
     }
 }
