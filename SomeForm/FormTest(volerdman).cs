@@ -53,7 +53,13 @@ namespace FormTestProject
 
         private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            userNonVisualControlDmitriev1.LoadObject<Student>(@"C:\Users\user\Desktop\Student.zip");
+            try {
+                userNonVisualControlDmitriev1.LoadObject<Student>(@".\Student.json");
+                MessageBox.Show("Успешно", " BackUp", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch {
+                MessageBox.Show("Ошибка", " BackUp", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
     }
 }

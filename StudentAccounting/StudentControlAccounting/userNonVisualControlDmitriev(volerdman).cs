@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.IO.Compression;
@@ -22,31 +24,32 @@ namespace StudentControlAccounting
             InitializeComponent();
         }
 
-        public T LoadObject<T>(string zipPath)
+        public List<T> LoadObject<T>(string zipPath)
         {
-            string path = "";
-            using (ZipArchive archive = ZipFile.OpenRead(zipPath))
+            //string path = "";
+            //using (ZipArchive archive = ZipFile.OpenRead(zipPath))
+            //{
+            //    foreach (ZipArchiveEntry entry in archive.Entries)
+            //    {
+            //        if (entry.FullName.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+            //        {
+            //            path = Path.GetFullPath(Path.Combine(zipPath, entry.FullName));
+            //        }
+            //    }
+            //}
+           
+            string result = "";
+            if (File.Exists(zipPath))
             {
-                foreach (ZipArchiveEntry entry in archive.Entries)
-                {
-                    if (entry.FullName.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
-                    {
-                        path = Path.GetFullPath(Path.Combine(zipPath, entry.FullName));
-                    }
-                }
+                string[] json = File.ReadAllLines(zipPath);
+                result = String.Concat(json);
             }
-            using (var ms = new MemoryStream(Encoding.Unicode.GetBytes(path)))
-            {
-                DataContractJsonSerializer deserializer = new DataContractJsonSerializer(typeof(T));
-                T Test = (T)deserializer.ReadObject(ms);
-                var type = Test.GetType();
-                var attr = (DataContractAttribute)Attribute.GetCustomAttribute(type, typeof(DataContractAttribute));
-                if (attr == null)
-                {
-                    throw new Exception("Дессериализация класса невозможна");
-                }
-                return Test;
-            }
+            var arrayModels = new List<T>();
+            arrayModels = JsonConvert.DeserializeObject<List<T>>(result);
+            return arrayModels;
+
         }
+
     }
+
 }
