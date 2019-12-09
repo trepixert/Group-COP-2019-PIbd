@@ -1,6 +1,6 @@
-﻿namespace StudentControlAccounting
+﻿namespace StudentAccountingControl
 {
-    partial class UserControlMalinin
+    partial class DataTimePickerWithRange
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,33 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox = new System.Windows.Forms.ListBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // listBox
+            // dateTimePicker
             // 
-            this.listBox.FormattingEnabled = true;
-            this.listBox.ItemHeight = 16;
-            this.listBox.Location = new System.Drawing.Point(4, 4);
-            this.listBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(331, 100);
-            this.listBox.TabIndex = 0;
+            this.dateTimePicker.Location = new System.Drawing.Point(18, 3);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker.TabIndex = 0;
             // 
-            // UserControlMalinin
+            // DataTimePickerWithRange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "UserControlMalinin";
-            this.Size = new System.Drawing.Size(339, 111);
+            this.Controls.Add(this.dateTimePicker);
+            this.Name = "DataTimePickerWithRange";
+            this.Size = new System.Drawing.Size(233, 27);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
     }
 }

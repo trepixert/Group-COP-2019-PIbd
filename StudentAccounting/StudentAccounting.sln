@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormTestProject", "..\SomeF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentControlAccounting", "StudentControlAccounting\StudentControlAccounting.csproj", "{EB79A4EF-9920-438E-AB36-9E6B4AEE1EE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{F3E713F7-1616-4438-A363-773A772F9D91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAccountingControl", "StudentAccountingControl\StudentAccountingControl.csproj", "{EECE744E-D503-423B-97EE-9BD62E20577E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{EB79A4EF-9920-438E-AB36-9E6B4AEE1EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB79A4EF-9920-438E-AB36-9E6B4AEE1EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB79A4EF-9920-438E-AB36-9E6B4AEE1EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3E713F7-1616-4438-A363-773A772F9D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E713F7-1616-4438-A363-773A772F9D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E713F7-1616-4438-A363-773A772F9D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E713F7-1616-4438-A363-773A772F9D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EECE744E-D503-423B-97EE-9BD62E20577E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECE744E-D503-423B-97EE-9BD62E20577E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECE744E-D503-423B-97EE-9BD62E20577E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECE744E-D503-423B-97EE-9BD62E20577E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
