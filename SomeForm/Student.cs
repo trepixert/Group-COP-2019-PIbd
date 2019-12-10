@@ -11,17 +11,11 @@ namespace FormTestProject
     public class Student
     {
         [DataMember]
-        public String Name { get; set; }
+        public String Group { get; set; }
         [DataMember]
-        public String Surname { get; set; }
+        public int Course { get; set; }
         [DataMember]
-        public String FatherName { get; set; }
+        public int Count { get; set; }
 
-        public Student(String name, String surname, String fatherName)
-        {
-            this.Name = name;
-            this.Surname = surname;
-            this.FatherName = fatherName;
-        }
     }
 }

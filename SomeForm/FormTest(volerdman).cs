@@ -7,6 +7,7 @@ namespace FormTestProject
 {
     public partial class FormTest : Form
     {
+        List<Student> list;
         public FormTest()
         {
             InitializeComponent();      
@@ -15,6 +16,7 @@ namespace FormTestProject
             userControlAgliullin1.AddNode("Бюджет", "/Первый курс/");
             userControlAgliullin1.AddNode("Группа", "/Первый курс/Бюджет/");
             userControlAgliullin1.AddNode("Второй курс", "/");
+            list = new List<Student> { new Student { Group = "ПИбд-21", Course = 1, Count = 5 }, new Student { Group = "ИСЭбд-21", Course = 1, Count = 10 }, new Student { Group = "ПИбд-11", Course = 2, Count = 7 } };
         }
 
         private void userControlDmitriev_CheckedListBoxSelectedElementsChange(object sender, EventArgs e)
@@ -34,7 +36,9 @@ namespace FormTestProject
 
         private void диаграммаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // userNonVisualComponentAgliullin1.CreateWord();
+            userNonVisualComponentAgliullin1.CreateWord(list,"Student", "Group", "Count", @"C:\Users\user\Desktop\diagram");
+
+            MessageBox.Show("Успешно", " Диаграмма", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void отчетToolStripMenuItem_Click(object sender, EventArgs e)

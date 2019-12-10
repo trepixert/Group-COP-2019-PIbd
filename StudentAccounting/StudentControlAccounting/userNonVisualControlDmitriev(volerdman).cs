@@ -26,18 +26,18 @@ namespace StudentControlAccounting
 
         public List<T> LoadObject<T>(string zipPath)
         {
-            //string path = "";
-            //using (ZipArchive archive = ZipFile.OpenRead(zipPath))
-            //{
-            //    foreach (ZipArchiveEntry entry in archive.Entries)
-            //    {
-            //        if (entry.FullName.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
-            //        {
-            //            path = Path.GetFullPath(Path.Combine(zipPath, entry.FullName));
-            //        }
-            //    }
-            //}
-           
+            string path = "";
+            using (ZipArchive archive = ZipFile.OpenRead(zipPath))
+            {
+                foreach (ZipArchiveEntry entry in archive.Entries)
+                {
+                    if (entry.FullName.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+                    {
+                        path = Path.GetFullPath(Path.Combine(zipPath, entry.FullName));
+                    }
+                }
+            }
+
             string result = "";
             if (File.Exists(zipPath))
             {

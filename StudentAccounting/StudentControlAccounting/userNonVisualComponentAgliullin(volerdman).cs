@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Xceed.Document.NET;
 using Xceed.Words.NET;
 
@@ -25,14 +26,14 @@ namespace StudentControlAccounting
             InitializeComponent();
         }
 
-        public void CreateWord(List<object> data, string diagramName, string name, string value)
+        public void CreateWord(IEnumerable<object> data, string diagramName, string name, string value, string path)
         {
-            Data = data;
+            Data = data.ToList();
             DiagramName = diagramName;
             Name = name;
             Value = value;
 
-            string pathDocument = AppDomain.CurrentDomain.BaseDirectory + "diagram.docx";
+            string pathDocument = path + ".docx";
 
             // создаём документ
             DocX document = DocX.Create(pathDocument);
