@@ -1,8 +1,8 @@
 ﻿namespace StudentControlAccounting
 {
-    partial class UserNonVisualComponentMalinin
+    partial class ListBoxView
     {
-        /// <summary>
+        /// <summary> 
         /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
@@ -22,22 +22,38 @@
 
         #region Код, автоматически созданный конструктором компонентов
 
-        /// <summary>
+        /// <summary> 
         /// Требуемый метод для поддержки конструктора — не изменяйте 
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent()
         {
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.listBox = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
             // 
-            // saveFileDialog
+            // listBox
             // 
-            this.saveFileDialog.Filter = "files|*.json";
+            this.listBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.ItemHeight = 16;
+            this.listBox.Location = new System.Drawing.Point(0, 0);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(498, 222);
+            this.listBox.TabIndex = 0;
+            // 
+            // ControlListBoxView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listBox);
+            this.Name = "LListBoxView";
+            this.Size = new System.Drawing.Size(498, 222);
+            this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.ListBox listBox;
     }
 }

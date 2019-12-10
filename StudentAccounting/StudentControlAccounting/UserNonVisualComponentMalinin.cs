@@ -25,17 +25,16 @@ namespace StudentControlAccounting
             InitializeComponent();
         }
 
-        public void SaveData<T>(T data, string path)
+        public void SaveData<T>(IEnumerable<T> data, string path)
         {
-            var type = data.GetType();
-            var attr = (SerializableAttribute)Attribute.GetCustomAttribute(type, typeof(SerializableAttribute));
+            var attr = (DataContractAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(DataContractAttribute));
 
             if (attr == null)
             {
                 throw new Exception("Serrialize error");
             }
 
-            var jsonFormatter = new DataContractJsonSerializer(typeof(T));
+            var jsonFormatter = new DataContractJsonSerializer(typeof(IEnumerable<T>));
 
             using (var fs = new FileStream(path, FileMode.OpenOrCreate))
             {
@@ -43,9 +42,9 @@ namespace StudentControlAccounting
             }
         }
 
-        public T LoadData<T>(string path)
+        public IEnumerable<T> LoadData<T>(string path)
         {
-            T data;
+            IEnumerable<T> data;
 
             var attr = (DataContractAttribute)Attribute.GetCustomAttribute(typeof(T), typeof(DataContractAttribute));
 
@@ -54,12 +53,13 @@ namespace StudentControlAccounting
                 throw new Exception("Deserialize error");
             }
 
-            var jsonFormatter = new DataContractJsonSerializer(typeof(T));
+            var jsonFormatter = new DataContractJsonSerializer(typeof(IEnumerable<T>));
 
             using (var fs = new FileStream(path, FileMode.OpenOrCreate))
             {
-                data = (T)jsonFormatter.ReadObject(fs);
+                data = (IEnumerable<T>)jsonFormatter.ReadObject(fs);
             }
+
             return data;
         }
     }

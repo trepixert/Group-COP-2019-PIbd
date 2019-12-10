@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace DB
         {           
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
-            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+            var ensureDLLIsCopied = SqlProviderServices.Instance;
         }
 
         public virtual DbSet<Student> Students { get; set; }

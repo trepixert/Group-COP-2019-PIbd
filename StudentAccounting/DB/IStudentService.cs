@@ -8,10 +8,10 @@ namespace DB
 {
     public interface IStudentService
     {
-        List<Student> GetList();
+        List<StudentViewModel> GetList();
 
-        Student GetElement(int id);
+        StudentViewModel GetElement(int id);
 
-        void AddElement(Student model);
+        void AddElement(StudentBindingModel model);
     }
 }

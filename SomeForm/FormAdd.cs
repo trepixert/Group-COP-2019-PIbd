@@ -14,63 +14,30 @@ namespace FormTestProject
 {
     public partial class FormAdd : Form
     {
-        [Dependency] 
+        [Dependency]
         public new IUnityContainer Container { get; set; }
 
-        public int Id { set { id = value; } }
+        private readonly StudentServiceDB service;
 
-        private readonly IStudentService service;
-
-        private int? id;
-
-        public FormAdd(IStudentService service)
+        public FormAdd(StudentServiceDB service)
         {
             InitializeComponent();
             this.service = service;
+
+            var products = new List<string> { "ПИ", "ИВТ", "ИСЭ", "ИСТ" };
+            checkedListBox1.LoadList(products);
         }
 
-        private void FormAdd_Load(object sender, EventArgs e)
+        private void ButtonCreate_Click(object sender, EventArgs e)
         {
-            controlListBoxSelected.LoadEnumeration(new List<string> { "ПИ", "ИСЭ", "ИВТ" });
-        }
+            var newStudent = new StudentBindingModel
+            {
+                FIO = textBox1.Text,
+                Profiles = string.Join(", ", checkedListBox1.CheckedValue),
+                EntryDate = dataTimePicker1.SelectedText
+            };
 
-        private void buttonSave_Click(object sender, EventArgs e)   
-        {
-            if (string.IsNullOrEmpty(controlListBoxSelected.SelectedText))
-            {
-                MessageBox.Show("Выберете Направление", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (string.IsNullOrEmpty(textBox1.Text))
-            {
-                MessageBox.Show("Заполните ФИО", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (string.IsNullOrEmpty(controlDataTimePicker))
-            {
-                MessageBox.Show("Выберете Дату", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            try
-            {
-                service.AddElement(new Student
-                {
-                    Profile = controlListBoxSelected.SelectedText,
-                    EntryDate = controlDataTimePicker
-                });
-                MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information); DialogResult = DialogResult.OK;
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
+            service.AddElement(newStudent);
         }
     }
 }

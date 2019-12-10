@@ -1,6 +1,6 @@
 ﻿namespace StudentControlAccounting
 {
-    partial class UserNonVisualComponentMalinin
+    partial class PDFReport
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,16 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.Filter = "files|*.json";
-
+            components = new System.ComponentModel.Container();
         }
 
         #endregion
-
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

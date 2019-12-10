@@ -55,6 +55,7 @@ namespace FormTestProject
         {
             jsonStoreComponent.LoadData<TestClass>("D:\\test.json");
             MessageBox.Show("Десериализация успешна");
+
         }
     }
 }
