@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-    public class AbstractDbContext : DbContext
+    public class AbstractDBContext : DbContext
     {
-        public AbstractDbContext() : base("StudentAccountingDB")
+        public AbstractDBContext() : base("StudentAccounting")
         {           
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;

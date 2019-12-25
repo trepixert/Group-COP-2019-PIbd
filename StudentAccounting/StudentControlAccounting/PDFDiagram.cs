@@ -35,10 +35,10 @@ namespace StudentControlAccounting
             {
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(path, FileMode.Create));
                 doc.Open();
-                var chart = CreateDiagram(objects);
+                var chart = CreateDiagram(objects, AxisX, AxisY);
 
-                chart.SaveImage("D://test.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                using (var imageStream = new FileStream("D://test.jpeg", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                chart.SaveImage("D://PDFDiagram.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                using (var imageStream = new FileStream("D://PDFDiagram.jpeg", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
                     var image = Image.GetInstance(imageStream);
                     doc.Add(image);
@@ -48,7 +48,7 @@ namespace StudentControlAccounting
             }
         }
 
-        private Chart CreateDiagram(IEnumerable<object> objects)
+        private Chart CreateDiagram(IEnumerable<object> objects, string AxisX, string AxisY)
         {
             chart = new Chart();
             ChartArea area = new ChartArea();
@@ -63,15 +63,15 @@ namespace StudentControlAccounting
             Legend legend = new Legend();
             chart.Legends.Add(legend);
 
-            var fields = objects.First().GetType().GetFields();
+            var fields = objects.First().GetType().GetProperties();
 
             this.chart.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
             chart.Series[0].XValueType = ChartValueType.DateTime;
 
             var obs = objects.ToArray();
 
-            var nums = fields.First(x => x.Name == "FIO");
-            var dates = fields.First(x => x.Name == "EntryDate");
+            var dates = fields.First(x => x.Name == AxisX);
+            var nums = fields.First(x => x.Name == AxisY);
 
             for (var j = 0; j < obs.Length; j++)
             {

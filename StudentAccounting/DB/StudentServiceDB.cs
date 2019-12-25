@@ -10,9 +10,9 @@ namespace DB
 {
     public class StudentServiceDB : IStudentService
     {
-        private readonly AbstractDbContext context;
+        private readonly AbstractDBContext context;
 
-        public StudentServiceDB(AbstractDbContext context)
+        public StudentServiceDB(AbstractDBContext context)
         {
             this.context = context;
         }

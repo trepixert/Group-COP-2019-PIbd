@@ -38,7 +38,7 @@ namespace StudentControlAccounting
 
         private void MakeRow(object o)
         {
-            var fields = o.GetType().GetProperties();
+            var fields = o.GetType().GetFields();
             var values = new List<object>();
             foreach (var column in columns)
             {

@@ -18,13 +18,13 @@ namespace FormTestProject
         public new IUnityContainer Container { get; set; }
 
         private readonly StudentServiceDB service;
-        private readonly AbstractDbContext context;
+        private readonly AbstractDBContext context;
 
         public FormStudents(StudentServiceDB service)
         {
             InitializeComponent();
             this.service = service;
-            context = new AbstractDbContext();
+            context = new AbstractDBContext();
         }
 
         public void LoadData()

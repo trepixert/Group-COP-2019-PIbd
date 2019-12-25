@@ -60,7 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractDbContext.cs" />
+    <Compile Include="AbstractDBContext.cs" />
     <Compile Include="IStudentService.cs" />
     <Compile Include="Migrations\201912092048584_Second.cs" />
     <Compile Include="Migrations\201912092048584_Second.designer.cs">

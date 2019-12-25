@@ -22,13 +22,14 @@ namespace FormTestProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(container.Resolve<FormStudents>());
+            //Application.Run(new FormTest2());
         }
 
         public static IUnityContainer BuildUnityContainer()
         {
             var currentContainer = new UnityContainer();
 
-            currentContainer.RegisterType<DbContext, AbstractDbContext>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<DbContext, AbstractDBContext>(new HierarchicalLifetimeManager());
 
             currentContainer.RegisterType<IStudentService, StudentServiceDB>(new HierarchicalLifetimeManager());
 
