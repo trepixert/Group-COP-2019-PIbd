@@ -10,8 +10,12 @@ namespace DB
     {
         List<StudentViewModel> GetList();
 
-        StudentViewModel GetElement(int id);
+        StudentBindingModel GetElement(int id);
 
         void AddElement(StudentBindingModel model);
+
+        StudentViewModel GetElementView(int id);
+
+        void UpdateElement(StudentBindingModel model);
     }
 }

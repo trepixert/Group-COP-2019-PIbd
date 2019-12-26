@@ -4,22 +4,20 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3E713F7-1616-4438-A363-773A772F9D91}</ProjectGuid>
+    <ProjectGuid>{FB76177A-9061-44B7-BD90-24C4179DCE72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DB</RootNamespace>
-    <AssemblyName>DB</AssemblyName>
+    <RootNamespace>PluginChangeDate</RootNamespace>
+    <AssemblyName>PluginChangeDate</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\SomeForm\bin\Debug\Plugins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,19 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,34 +53,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractDBContext.cs" />
-    <Compile Include="IStudentService.cs" />
-    <Compile Include="Migrations\201912092048584_Second.cs" />
-    <Compile Include="Migrations\201912092048584_Second.designer.cs">
-      <DependentUpon>201912092048584_Second.cs</DependentUpon>
+    <Compile Include="ChangeDate.cs" />
+    <Compile Include="FormChangeDate.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Migrations\201912100823218_Third.cs" />
-    <Compile Include="Migrations\201912100823218_Third.designer.cs">
-      <DependentUpon>201912100823218_Third.cs</DependentUpon>
+    <Compile Include="FormChangeDate.Designer.cs">
+      <DependentUpon>FormChangeDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="StudentBindingModel.cs" />
-    <Compile Include="StudentServiceDB.cs" />
-    <Compile Include="StudentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <EmbeddedResource Include="FormChangeDate.resx">
+      <DependentUpon>FormChangeDate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912092048584_Second.resx">
-      <DependentUpon>201912092048584_Second.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912100823218_Third.resx">
-      <DependentUpon>201912100823218_Third.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\..\Plugins\Plugins.csproj">
+      <Project>{A97D874E-2F9B-4C9C-BE12-C7305C940C17}</Project>
+      <Name>Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DB\DB.csproj">
+      <Project>{F3E713F7-1616-4438-A363-773A772F9D91}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentControlAccounting\StudentControlAccounting.csproj">
+      <Project>{eb79a4ef-9920-438e-ab36-9e6b4aee1ee0}</Project>
+      <Name>StudentControlAccounting</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

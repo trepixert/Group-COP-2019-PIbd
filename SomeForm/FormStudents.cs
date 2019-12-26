@@ -1,4 +1,5 @@
 ﻿using DB;
+using Plugins;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,11 +21,21 @@ namespace FormTestProject
         private readonly StudentServiceDB service;
         private readonly AbstractDBContext context;
 
+        private PluginManager pluginManager;
+        private List<IPlugin> plugins;
+
         public FormStudents(StudentServiceDB service)
         {
             InitializeComponent();
             this.service = service;
             context = new AbstractDBContext();
+
+            pluginManager = new PluginManager();
+            plugins = pluginManager.Plugins.ToList();
+            foreach (var plugin in plugins)
+            {
+                listBox1.Items.Add(plugin.Name);
+            }
         }
 
         public void LoadData()
@@ -34,7 +45,7 @@ namespace FormTestProject
                 List<StudentViewModel> list = service.GetList();
                 if (list != null)
                 {
-                    listBoxView1.Pattern ="ФИО - {FIO}, Направления - {Profiles}, Дата поступления - {EntryDate}";
+                    listBoxView1.Pattern = "Id-{Id}, ФИО - {FIO}, Направления - {Profiles}, Дата поступления - {EntryDate}";
 
                     listBoxView1.LoadData(list);
                 }
@@ -131,6 +142,16 @@ namespace FormTestProject
 
                 var students = storeComponent1.LoadData<Student>(path);
                 listBoxView1.LoadData(students.ToList());
+            }
+        }
+        private void ButtonRunPlugin_Click(object sender, EventArgs e)
+        {
+            var studentId = listBoxView1.SelectedId;
+            var pluginIndex = listBox1.SelectedIndex;
+
+            if (studentId != -1 && pluginIndex != -1)
+            {
+                plugins[pluginIndex].Run(studentId);
             }
         }
     }

@@ -22,6 +22,7 @@ namespace DB
         {
             return context.Students.Select(rec => new StudentViewModel
             {
+                Id = rec.Id,
                 FIO = rec.FIO,
                 EntryDate = SqlFunctions.DateName("dd", rec.EntryDate) + " " +
                              SqlFunctions.DateName("mm", rec.EntryDate) +
@@ -30,19 +31,17 @@ namespace DB
             }).ToList();
         }
 
-        public StudentViewModel GetElement(int id)
+        public StudentBindingModel GetElement(int id)
         {
             var student = context.Students.FirstOrDefault(rec => rec.Id == id);
 
             if (student == null) throw new Exception("Студент не найден");
 
-            return new StudentViewModel
+            return new StudentBindingModel
             {
+                Id = student.Id,
                 FIO = student.FIO,
-                EntryDate = SqlFunctions.DateName("dd", student.EntryDate) + " " +
-                             SqlFunctions.DateName("mm", student.EntryDate) +
-                             " " + SqlFunctions.DateName("yyyy", student.EntryDate),
-              
+                EntryDate = student.EntryDate,
                 Profiles = student.Profile
             };
         }
@@ -69,6 +68,35 @@ namespace DB
                     throw;
                 }
             }
+        }
+        public void UpdateElement(StudentBindingModel model)
+        {
+            var student = context.Students.FirstOrDefault(ord => ord.Id == model.Id);
+
+            if (student == null)
+            {
+                throw new Exception("Студент не найден");
+            }
+            student.Profile = model.Profiles;
+            student.EntryDate = model.EntryDate;
+
+            context.SaveChanges();
+        }
+
+        public StudentViewModel GetElementView(int id)
+        {
+            var element = context.Students.FirstOrDefault(rec => rec.Id == id);
+
+            if (element != null)
+            {
+                return new StudentViewModel
+                {
+                    FIO = element.FIO,
+                    Profiles = element.Profile,
+                    EntryDate = element.EntryDate
+                };
+            }
+            throw new Exception("Элемент не найден");
         }
     }
 }

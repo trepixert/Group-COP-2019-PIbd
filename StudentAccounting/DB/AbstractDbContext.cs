@@ -14,7 +14,7 @@ namespace DB
         {           
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
-            var ensureDLLIsCopied = SqlProviderServices.Instance;
+            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
         public virtual DbSet<Student> Students { get; set; }

@@ -22,7 +22,6 @@ namespace FormTestProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(container.Resolve<FormStudents>());
-            //Application.Run(new FormTest2());
         }
 
         public static IUnityContainer BuildUnityContainer()

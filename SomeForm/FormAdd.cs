@@ -37,7 +37,20 @@ namespace FormTestProject
                 EntryDate = dataTimePicker1.SelectedText
             };
 
-            service.AddElement(newStudent);
+            try
+            {
+                service.AddElement(newStudent);
+
+                MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

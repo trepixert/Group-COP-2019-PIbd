@@ -41,6 +41,15 @@ namespace StudentControlAccounting
             }
         }
 
+        public int SelectedId
+        {
+            get
+            {
+                var element = listBox.Items[SelectedIndex];
+                return Convert.ToInt32(element.ToString().Split(',')[0].Split('-')[1]);
+            }            
+        }
+
         [Category("Спецификация"), Description("Текст выбранной записи")]
         public string SelectedText => listBox.Text;
 
