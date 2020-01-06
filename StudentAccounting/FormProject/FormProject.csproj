@@ -55,6 +55,7 @@
       <HintPath>..\..\..\OnlineShop\SharafutdinovaLibNotVisual\bin\Debug\SharafutdinovaLibNotVisual.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -92,6 +93,7 @@
     <Compile Include="FormStudents.Designer.cs">
       <DependentUpon>FormStudents.cs</DependentUpon>
     </Compile>
+    <Compile Include="PluginManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormStudents.resx">
@@ -132,6 +134,10 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{d94e01dc-543d-408c-aa0d-348acc000063}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginInterface\PluginInterface.csproj">
+      <Project>{2A45F944-D634-4618-A2D9-C676A4752EC0}</Project>
+      <Name>PluginInterface</Name>
     </ProjectReference>
     <ProjectReference Include="..\StudentControlAccounting\StudentControlAccounting.csproj">
       <Project>{eb79a4ef-9920-438e-ab36-9e6b4aee1ee0}</Project>

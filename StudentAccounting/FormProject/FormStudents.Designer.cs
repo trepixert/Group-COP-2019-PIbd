@@ -30,57 +30,45 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.FIO_Field = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Scholarship_Field = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Add_Button = new System.Windows.Forms.Button();
-            this.controlTreeView1 = new AnikyevLib.ControlTreeView();
-            this.userControlAgliullin_Course_Field = new StudentControlAccounting.UserControlAgliullin();
-            this.userNonVisualComponenetAgliullin1 = new StudentControlAccounting.userNonVisualComponenetAgliullin(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.wordReport1 = new SharafutdinovaLibNotVisual.WordReport(this.components);
             this.wordDiagram1 = new MaxinLib.WordDiagram(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.controlTreeView1 = new AnikyevLib.ControlTreeView();
+            this.userControlAgliullin_Course_Field = new StudentControlAccounting.UserControlAgliullin();
+            this.userNonVisualComponenetAgliullin1 = new StudentControlAccounting.userNonVisualComponenetAgliullin(this.components);
+            this.fio_field = new System.Windows.Forms.TextBox();
+            this.controlTextBoxInput1 = new MaxinLib.ControlTextBoxInput();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 15);
+            this.label1.Location = new System.Drawing.Point(21, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "ФИО";
             // 
-            // FIO_Field
-            // 
-            this.FIO_Field.Location = new System.Drawing.Point(74, 12);
-            this.FIO_Field.Name = "FIO_Field";
-            this.FIO_Field.Size = new System.Drawing.Size(149, 20);
-            this.FIO_Field.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 38);
+            this.label2.Location = new System.Drawing.Point(24, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Курс";
             // 
-            // Scholarship_Field
-            // 
-            this.Scholarship_Field.Location = new System.Drawing.Point(74, 74);
-            this.Scholarship_Field.Name = "Scholarship_Field";
-            this.Scholarship_Field.Size = new System.Drawing.Size(149, 20);
-            this.Scholarship_Field.TabIndex = 4;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 74);
+            this.label3.Location = new System.Drawing.Point(21, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 5;
@@ -88,28 +76,13 @@
             // 
             // Add_Button
             // 
-            this.Add_Button.Location = new System.Drawing.Point(104, 110);
+            this.Add_Button.Location = new System.Drawing.Point(93, 154);
             this.Add_Button.Name = "Add_Button";
             this.Add_Button.Size = new System.Drawing.Size(75, 23);
             this.Add_Button.TabIndex = 6;
             this.Add_Button.Text = "Добавить";
             this.Add_Button.UseVisualStyleBackColor = true;
             this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
-            // 
-            // controlTreeView1
-            // 
-            this.controlTreeView1.Location = new System.Drawing.Point(385, 12);
-            this.controlTreeView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.controlTreeView1.Name = "controlTreeView1";
-            this.controlTreeView1.Size = new System.Drawing.Size(369, 274);
-            this.controlTreeView1.TabIndex = 7;
-            // 
-            // userControlAgliullin_Course_Field
-            // 
-            this.userControlAgliullin_Course_Field.Location = new System.Drawing.Point(74, 38);
-            this.userControlAgliullin_Course_Field.Name = "userControlAgliullin_Course_Field";
-            this.userControlAgliullin_Course_Field.Size = new System.Drawing.Size(149, 29);
-            this.userControlAgliullin_Course_Field.TabIndex = 0;
             // 
             // button1
             // 
@@ -130,7 +103,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(39, 155);
+            this.button2.Location = new System.Drawing.Point(39, 183);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
@@ -140,7 +113,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(148, 155);
+            this.button3.Location = new System.Drawing.Point(148, 183);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 10;
@@ -148,20 +121,72 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(182, 241);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Plugin";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(24, 212);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 12;
+            // 
+            // controlTreeView1
+            // 
+            this.controlTreeView1.Location = new System.Drawing.Point(385, 12);
+            this.controlTreeView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlTreeView1.Name = "controlTreeView1";
+            this.controlTreeView1.Size = new System.Drawing.Size(369, 274);
+            this.controlTreeView1.TabIndex = 7;
+            // 
+            // userControlAgliullin_Course_Field
+            // 
+            this.userControlAgliullin_Course_Field.Location = new System.Drawing.Point(74, 44);
+            this.userControlAgliullin_Course_Field.Name = "userControlAgliullin_Course_Field";
+            this.userControlAgliullin_Course_Field.Size = new System.Drawing.Size(149, 29);
+            this.userControlAgliullin_Course_Field.TabIndex = 0;
+            // 
+            // fio_field
+            // 
+            this.fio_field.Location = new System.Drawing.Point(74, 13);
+            this.fio_field.Name = "fio_field";
+            this.fio_field.Size = new System.Drawing.Size(149, 20);
+            this.fio_field.TabIndex = 13;
+            // 
+            // controlTextBoxInput1
+            // 
+            this.controlTextBoxInput1.IsChecked = false;
+            this.controlTextBoxInput1.Location = new System.Drawing.Point(73, 86);
+            this.controlTextBoxInput1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlTextBoxInput1.Name = "controlTextBoxInput1";
+            this.controlTextBoxInput1.Size = new System.Drawing.Size(215, 47);
+            this.controlTextBoxInput1.TabIndex = 14;
+            this.controlTextBoxInput1.TextBoxValue = null;
+            // 
             // FormStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.controlTextBoxInput1);
+            this.Controls.Add(this.fio_field);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.controlTreeView1);
             this.Controls.Add(this.Add_Button);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Scholarship_Field);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.FIO_Field);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.userControlAgliullin_Course_Field);
             this.Name = "FormStudents";
@@ -177,9 +202,7 @@
         private StudentControlAccounting.UserControlAgliullin userControlAgliullin_Course_Field;
         private StudentControlAccounting.userNonVisualComponenetAgliullin userNonVisualComponenetAgliullin1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox FIO_Field;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox Scholarship_Field;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Add_Button;
         private AnikyevLib.ControlTreeView controlTreeView1;
@@ -188,6 +211,10 @@
         private MaxinLib.WordDiagram wordDiagram1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox fio_field;
+        private MaxinLib.ControlTextBoxInput controlTextBoxInput1;
     }
 }
 

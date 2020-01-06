@@ -1,6 +1,7 @@
 ﻿using DAL.Implementations;
 using DAL.Interfaces;
 using Model.Models;
+using PluginInterface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,19 +17,25 @@ namespace FormProject
     public partial class FormStudents : Form
     {
         private readonly IStudentService service;
+
+        private PluginManager pluginManager;
+
+        private List<IPlugin> plugins;
         public FormStudents(IStudentService service)
         {
             InitializeComponent();
             userControlAgliullin_Course_Field.LoadEnumeration(typeof(Course));
             this.service = service;
+            
         }
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
-            string fio = FIO_Field.Text;
+            string fio = fio_field.Text;
             string course = userControlAgliullin_Course_Field.GetSelectedText;
             Course parsedCourse = (Course) Enum.Parse(typeof(Course), course);
-            double stipuha = double.Parse(Scholarship_Field.Text);
+            var stipihaFromText = controlTextBoxInput1.TextBoxValue;
+            double stipuha = stipihaFromText.GetValueOrDefault(0);
             Student student = new Student() {
                 FIO = fio,
                 Course = parsedCourse,
@@ -68,6 +75,11 @@ namespace FormProject
         }
 
         private void Form1_Load(object sender, EventArgs e) {
+            pluginManager = new PluginManager();
+            plugins = pluginManager.Plugins.ToList();
+            foreach (var plugin in plugins) {
+                listBox1.Items.Add(plugin.Name);
+            }
             controlTreeView1.AddNode("Первый", "/");
             controlTreeView1.AddNode("Второй", "/Первый/");
             controlTreeView1.AddNode("Третий", "/Первый/Второй/");
@@ -95,6 +107,17 @@ namespace FormProject
                     select new { Scholarship = g.Key, Count = count };
             newList.AddRange(q);
             wordDiagram1.CreateDiagram(newList, "result", "Count", "Scholarship");
+        }
+
+        private void Button4_Click(object sender, EventArgs e) {
+            //plugin 
+            //TODO: сделать получение ID
+            var studentId = controlTreeView1.SelectedId;
+            var pluginIndex = listBox1.SelectedIndex;
+
+            if (studentId != -1 && pluginIndex != -1) {
+                plugins[pluginIndex].run(studentId);
+            }
         }
     }
 }

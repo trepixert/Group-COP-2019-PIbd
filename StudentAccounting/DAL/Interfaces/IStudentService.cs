@@ -10,6 +10,10 @@ namespace DAL.Interfaces
     public interface IStudentService
     {
         void add(Student student);
+        void update(int studentId, Course course);
         List<Student> getAll();
+        void update(int studentId, int value);
+
+        Student getOneById(int id);
     }
 }

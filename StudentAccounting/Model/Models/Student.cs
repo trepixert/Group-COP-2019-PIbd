@@ -20,7 +20,7 @@ namespace Model.Models
         public double Scholarship { get; set; }
 
         public override string ToString() {
-            return string.Format("ФИО: {0} Стипуха: {1}", FIO, Scholarship);
+            return string.Format("Id:{0},ФИО:{1},Стипуха:{2}", Id, FIO, Scholarship);
         }
     }
 }
