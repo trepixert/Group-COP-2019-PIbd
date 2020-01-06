@@ -34,7 +34,7 @@
             // comboBoxCourse
             // 
             this.comboBoxCourse.FormattingEnabled = true;
-            this.comboBoxCourse.Location = new System.Drawing.Point(3, 3);
+            this.comboBoxCourse.Location = new System.Drawing.Point(0, 0);
             this.comboBoxCourse.Name = "comboBoxCourse";
             this.comboBoxCourse.Size = new System.Drawing.Size(143, 21);
             this.comboBoxCourse.TabIndex = 0;
@@ -45,7 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.comboBoxCourse);
             this.Name = "UserControlAgliullin";
-            this.Size = new System.Drawing.Size(149, 29);
+            this.Size = new System.Drawing.Size(144, 22);
             this.ResumeLayout(false);
 
         }
