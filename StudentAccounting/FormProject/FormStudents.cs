@@ -1,4 +1,5 @@
-﻿using DAL.Implementations;
+﻿using Adapter;
+using DAL.Implementations;
 using DAL.Interfaces;
 using Model.Models;
 using PluginInterface;
@@ -21,12 +22,14 @@ namespace FormProject
         private PluginManager pluginManager;
 
         private List<IPlugin> plugins;
+
+        private EmployeeService adapter;
         public FormStudents(IStudentService service)
         {
             InitializeComponent();
             userControlAgliullin_Course_Field.LoadEnumeration(typeof(Course));
             this.service = service;
-            
+            adapter = new EmployeeAdapterFromStudent();
         }
 
         private void Add_Button_Click(object sender, EventArgs e)
@@ -59,6 +62,13 @@ namespace FormProject
                 case Course.Четвёртый:
                     controlTreeView1.AddNode(student.ToString(), "/Первый/Второй/Третий/Четвёртый/");
                     break;
+                default:
+                    Employee employee = new Employee() {
+                        Name = student.FIO,
+                        Wage = student.Scholarship
+                    };
+                    controlTreeView1.AddNode(employee.ToString(), "/Первый/Второй/Третий/Четвёртый/Сотрудники/");
+                    break;
             }
         }
 
@@ -69,6 +79,7 @@ namespace FormProject
                 controlTreeView1.AddNode("Второй", "/Первый/");
                 controlTreeView1.AddNode("Третий", "/Первый/Второй/");
                 controlTreeView1.AddNode("Четвёртый", "/Первый/Второй/Третий/");
+                controlTreeView1.AddNode("Сотрудники", "/Первый/Второй/Третий/Четвёртый/");
                 List<Student> list = service.getAll();
                 if (list != null) {
                     list.ForEach(addNode);
@@ -86,7 +97,6 @@ namespace FormProject
                 listBox1.Items.Add(plugin.Name);
             }
             LoadData();
-            UpdateLessons();
         }
 
         private void Button1_Click(object sender, EventArgs e) {
@@ -130,7 +140,16 @@ namespace FormProject
             controlTreeView2.AddNode(student.ToString() + " " + userControlAbstractFactory1.GetString, "/");
         }
 
-        private void UpdateLessons() {
+        private void Button6_Click(object sender, EventArgs e) {
+            //employee
+            string FIO = userControlAdapter1.FIO;
+            int wage = userControlAdapter1.Wage;
+
+            adapter.hireEmployee(new Employee() {
+                Name = FIO,
+                Wage = wage
+            });
+            LoadData();
         }
     }
 }

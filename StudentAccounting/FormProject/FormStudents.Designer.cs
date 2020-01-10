@@ -28,25 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Add_Button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.wordReport1 = new SharafutdinovaLibNotVisual.WordReport();
-            this.wordDiagram1 = new MaxinLib.WordDiagram();
+            this.wordReport1 = new SharafutdinovaLibNotVisual.WordReport(this.components);
+            this.wordDiagram1 = new MaxinLib.WordDiagram(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.controlTreeView1 = new AnikyevLib.ControlTreeView();
             this.fio_field = new System.Windows.Forms.TextBox();
-            this.controlTextBoxInput1 = new MaxinLib.ControlTextBoxInput();
             this.controlTreeView2 = new AnikyevLib.ControlTreeView();
             this.userControlAbstractFactory1 = new AbstractFactory.UserControlAbstractFactory();
             this.userControlAgliullin_Course_Field = new StudentControlAccounting.UserControlAgliullin();
-            this.userNonVisualComponenetAgliullin1 = new StudentControlAccounting.userNonVisualComponenetAgliullin();
+            this.userNonVisualComponenetAgliullin1 = new StudentControlAccounting.userNonVisualComponenetAgliullin(this.components);
             this.button5 = new System.Windows.Forms.Button();
+            this.controlTextBoxInput1 = new MaxinLib.ControlTextBoxInput();
+            this.userControlAdapter1 = new Adapter.UserControlAdapter();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -156,19 +159,10 @@
             this.fio_field.Size = new System.Drawing.Size(149, 20);
             this.fio_field.TabIndex = 13;
             // 
-            // controlTextBoxInput1
-            // 
-            this.controlTextBoxInput1.IsChecked = false;
-            this.controlTextBoxInput1.Location = new System.Drawing.Point(73, 86);
-            this.controlTextBoxInput1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.controlTextBoxInput1.Name = "controlTextBoxInput1";
-            this.controlTextBoxInput1.Size = new System.Drawing.Size(215, 47);
-            this.controlTextBoxInput1.TabIndex = 14;
-            this.controlTextBoxInput1.TextBoxValue = null;
-            // 
             // controlTreeView2
             // 
             this.controlTreeView2.Location = new System.Drawing.Point(385, 337);
+            this.controlTreeView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.controlTreeView2.Name = "controlTreeView2";
             this.controlTreeView2.Size = new System.Drawing.Size(369, 204);
             this.controlTreeView2.TabIndex = 16;
@@ -197,11 +191,40 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
+            // controlTextBoxInput1
+            // 
+            this.controlTextBoxInput1.IsChecked = false;
+            this.controlTextBoxInput1.Location = new System.Drawing.Point(73, 86);
+            this.controlTextBoxInput1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlTextBoxInput1.Name = "controlTextBoxInput1";
+            this.controlTextBoxInput1.Size = new System.Drawing.Size(215, 47);
+            this.controlTextBoxInput1.TabIndex = 14;
+            this.controlTextBoxInput1.TextBoxValue = null;
+            // 
+            // userControlAdapter1
+            // 
+            this.userControlAdapter1.Location = new System.Drawing.Point(12, 441);
+            this.userControlAdapter1.Name = "userControlAdapter1";
+            this.userControlAdapter1.Size = new System.Drawing.Size(336, 111);
+            this.userControlAdapter1.TabIndex = 18;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(122, 558);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "Добавить";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
             // FormStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 599);
+            this.ClientSize = new System.Drawing.Size(797, 678);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.userControlAdapter1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.controlTreeView2);
             this.Controls.Add(this.userControlAbstractFactory1);
@@ -243,10 +266,12 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox fio_field;
-        private MaxinLib.ControlTextBoxInput controlTextBoxInput1;
         private AbstractFactory.UserControlAbstractFactory userControlAbstractFactory1;
         private System.Windows.Forms.Button button5;
         private AnikyevLib.ControlTreeView controlTreeView2;
+        private MaxinLib.ControlTextBoxInput controlTextBoxInput1;
+        private Adapter.UserControlAdapter userControlAdapter1;
+        private System.Windows.Forms.Button button6;
     }
 }
 
