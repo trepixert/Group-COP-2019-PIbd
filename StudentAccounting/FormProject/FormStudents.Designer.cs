@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Add_Button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.wordReport1 = new SharafutdinovaLibNotVisual.WordReport(this.components);
-            this.wordDiagram1 = new MaxinLib.WordDiagram(this.components);
+            this.wordReport1 = new SharafutdinovaLibNotVisual.WordReport();
+            this.wordDiagram1 = new MaxinLib.WordDiagram();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.controlTreeView1 = new AnikyevLib.ControlTreeView();
-            this.userControlAgliullin_Course_Field = new StudentControlAccounting.UserControlAgliullin();
-            this.userNonVisualComponenetAgliullin1 = new StudentControlAccounting.userNonVisualComponenetAgliullin(this.components);
             this.fio_field = new System.Windows.Forms.TextBox();
             this.controlTextBoxInput1 = new MaxinLib.ControlTextBoxInput();
+            this.controlTreeView2 = new AnikyevLib.ControlTreeView();
+            this.userControlAbstractFactory1 = new AbstractFactory.UserControlAbstractFactory();
+            this.userControlAgliullin_Course_Field = new StudentControlAccounting.UserControlAgliullin();
+            this.userNonVisualComponenetAgliullin1 = new StudentControlAccounting.userNonVisualComponenetAgliullin();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -147,13 +149,6 @@
             this.controlTreeView1.Size = new System.Drawing.Size(369, 274);
             this.controlTreeView1.TabIndex = 7;
             // 
-            // userControlAgliullin_Course_Field
-            // 
-            this.userControlAgliullin_Course_Field.Location = new System.Drawing.Point(74, 44);
-            this.userControlAgliullin_Course_Field.Name = "userControlAgliullin_Course_Field";
-            this.userControlAgliullin_Course_Field.Size = new System.Drawing.Size(149, 29);
-            this.userControlAgliullin_Course_Field.TabIndex = 0;
-            // 
             // fio_field
             // 
             this.fio_field.Location = new System.Drawing.Point(74, 13);
@@ -171,11 +166,45 @@
             this.controlTextBoxInput1.TabIndex = 14;
             this.controlTextBoxInput1.TextBoxValue = null;
             // 
+            // controlTreeView2
+            // 
+            this.controlTreeView2.Location = new System.Drawing.Point(385, 337);
+            this.controlTreeView2.Name = "controlTreeView2";
+            this.controlTreeView2.Size = new System.Drawing.Size(369, 204);
+            this.controlTreeView2.TabIndex = 16;
+            // 
+            // userControlAbstractFactory1
+            // 
+            this.userControlAbstractFactory1.Location = new System.Drawing.Point(27, 337);
+            this.userControlAbstractFactory1.Name = "userControlAbstractFactory1";
+            this.userControlAbstractFactory1.Size = new System.Drawing.Size(230, 98);
+            this.userControlAbstractFactory1.TabIndex = 15;
+            // 
+            // userControlAgliullin_Course_Field
+            // 
+            this.userControlAgliullin_Course_Field.Location = new System.Drawing.Point(74, 44);
+            this.userControlAgliullin_Course_Field.Name = "userControlAgliullin_Course_Field";
+            this.userControlAgliullin_Course_Field.Size = new System.Drawing.Size(149, 29);
+            this.userControlAgliullin_Course_Field.TabIndex = 0;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(122, 412);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Add";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
             // FormStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 599);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.controlTreeView2);
+            this.Controls.Add(this.userControlAbstractFactory1);
             this.Controls.Add(this.controlTextBoxInput1);
             this.Controls.Add(this.fio_field);
             this.Controls.Add(this.listBox1);
@@ -215,6 +244,9 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox fio_field;
         private MaxinLib.ControlTextBoxInput controlTextBoxInput1;
+        private AbstractFactory.UserControlAbstractFactory userControlAbstractFactory1;
+        private System.Windows.Forms.Button button5;
+        private AnikyevLib.ControlTreeView controlTreeView2;
     }
 }
 

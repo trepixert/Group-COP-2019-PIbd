@@ -13,6 +13,14 @@ namespace DAL.Implementations {
             this.context = context;
         }
 
+        /** 
+         * TODO: 1 препод - 1 студент
+         * Диссертация, диплом и кандидатская
+         * 1 абстрактная - 3 реализации
+         * 2 интерфейса - ??? то есть поведение --- нужно состояние - придумать!!!
+         * универ, колледж
+         */
+
         public void add(Student student) {
             using(var transaction = context.Database.BeginTransaction()) {
                 try {

@@ -42,7 +42,7 @@ namespace FormProject
                 Scholarship = stipuha
             };
             service.add(student);
-            addNode(student);
+            LoadData();
         }
 
         public void addNode(Student student) {
@@ -64,6 +64,11 @@ namespace FormProject
 
         public void LoadData() {
             try {
+                controlTreeView1.Clear();
+                controlTreeView1.AddNode("Первый", "/");
+                controlTreeView1.AddNode("Второй", "/Первый/");
+                controlTreeView1.AddNode("Третий", "/Первый/Второй/");
+                controlTreeView1.AddNode("Четвёртый", "/Первый/Второй/Третий/");
                 List<Student> list = service.getAll();
                 if (list != null) {
                     list.ForEach(addNode);
@@ -80,11 +85,8 @@ namespace FormProject
             foreach (var plugin in plugins) {
                 listBox1.Items.Add(plugin.Name);
             }
-            controlTreeView1.AddNode("Первый", "/");
-            controlTreeView1.AddNode("Второй", "/Первый/");
-            controlTreeView1.AddNode("Третий", "/Первый/Второй/");
-            controlTreeView1.AddNode("Четвёртый", "/Первый/Второй/Третий/");
             LoadData();
+            UpdateLessons();
         }
 
         private void Button1_Click(object sender, EventArgs e) {
@@ -118,6 +120,17 @@ namespace FormProject
             if (studentId != -1 && pluginIndex != -1) {
                 plugins[pluginIndex].run(studentId);
             }
+            LoadData();
+        }
+
+        private void Button5_Click(object sender, EventArgs e) {
+            //ADD
+            var studentId = controlTreeView1.SelectedId;
+            Student student = service.getOneById(studentId);
+            controlTreeView2.AddNode(student.ToString() + " " + userControlAbstractFactory1.GetString, "/");
+        }
+
+        private void UpdateLessons() {
         }
     }
 }

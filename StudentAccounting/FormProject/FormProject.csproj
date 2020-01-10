@@ -123,6 +123,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AbstractFactory\AbstractFactory.csproj">
+      <Project>{56b0a8d2-96b8-436f-b5eb-f74a19af46b2}</Project>
+      <Name>AbstractFactory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{771a6227-afd5-43fb-96b7-8bc0642037c1}</Project>
       <Name>DAL</Name>
